@@ -1,4 +1,4 @@
-## Amazon ECS "Render Task Definition" Action for GitHub Actions
+## Amazon ECS "Set Container Name in Task Definition" Action for GitHub Actions
 
 Updates the container name in an Amazon ECS task definition JSON file, creating a new task definition file.
 
