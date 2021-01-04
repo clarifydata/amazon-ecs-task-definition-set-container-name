@@ -19,7 +19,7 @@ To update the container name to `database` for the `web` container in the task d
 ```yaml
 - name: Render Amazon ECS task definition
   id: render-web-container
-  uses: aws-actions/amazon-ecs-render-task-definition@v1
+  uses: clarifydata/amazon-ecs-task-definition-set-container-name@master
   with:
     task-definition: task-definition.json
     container-name: postgres
@@ -41,7 +41,7 @@ input of the second:
 ```yaml
 - name: Render Amazon ECS task definition for first container
   id: render-web-container
-  uses: aws-actions/amazon-ecs-render-task-definition@v1
+  uses: clarifydata/amazon-ecs-task-definition-set-container-name@master
   with:
     task-definition: task-definition.json
     container-name: postgres
@@ -49,7 +49,7 @@ input of the second:
 
 - name: Modify Amazon ECS task definition with second container
   id: render-app-container
-  uses: aws-actions/amazon-ecs-render-task-definition@v1
+  uses: clarifydata/amazon-ecs-task-definition-set-container-name@master
   with:
     task-definition: ${{ steps.render-web-container.outputs.task-definition }}
     container-name: web
